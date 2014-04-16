@@ -4,4 +4,4 @@ libcppjieba.a:
 demo: libcppjieba.a
 	g++ -o demo -O3 -Wall -g -I./include demo.cpp -L./ -lcppjieba
 clean:
-	rm -f *.o *.a
+	rm -f *.o *.a demo
