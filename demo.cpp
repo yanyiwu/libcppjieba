@@ -22,5 +22,5 @@ int main(int argc, char ** argv)
     vector<string> words;
     segment.cut(test_lines, words);
     print(words);
-    return EXIT_SUCCESS;
+    return 0;
 }
