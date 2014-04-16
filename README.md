@@ -11,6 +11,12 @@ extract source code from [CppJieba], make it easy to understand and use.
 
 ## Usage
 
+```
+make 
+./demo
+```
+
+
 
 ## Thanks
 
