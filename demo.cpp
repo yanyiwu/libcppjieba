@@ -21,6 +21,6 @@ int main(int argc, char ** argv)
     MixSegment segment(dict_path, model_path);
     vector<string> words;
     segment.cut(test_lines, words);
-    print(words);
+    cout << words << endl;
     return 0;
 }
