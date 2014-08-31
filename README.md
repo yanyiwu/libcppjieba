@@ -5,7 +5,8 @@
 
 ## Introduction
 
-extract source code from [CppJieba], make it easiest to understand and use.
+extract source code from [CppJieba], make it easiest to understand and use.  
+if you like this project, please star [CppJieba] instead of this project (star both of them will be welcome). thanks.  
 
 ## Feature
 
