@@ -21,6 +21,8 @@ make
 ./demo
 ```
 
+如果是 `OSX` 系统，请使用 cpp11 ， `make cpp11` 。
+
 详细示例代码请看 `demo.cpp`
 
 ## 常见问题
