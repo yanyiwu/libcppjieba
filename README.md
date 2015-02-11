@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aszxqw/libcppjieba.png?branch=master)](https://travis-ci.org/aszxqw/libcppjieba)
+[![Build Status](https://travis-ci.org/yanyiwu/libcppjieba.png?branch=master)](https://travis-ci.org/yanyiwu/libcppjieba)
 - - -
 
 # libcppjieba
@@ -47,5 +47,5 @@ make
 
 wuyanyi09@foxmail.com
 
-[CppJieba]:https://github.com/aszxqw/cppjieba
+[CppJieba]:https://github.com/yanyiwu/cppjieba
 [Jieba]:https://github.com/fxsjy/jieba
