@@ -21,8 +21,6 @@ make
 ./demo
 ```
 
-如果是 `OSX` 系统，请使用 `make osx` 。
-
 详细示例代码请看 `demo.cpp`
 
 ## 常见问题
@@ -45,7 +43,9 @@ make
 
 ## 客服
 
-wuyanyi09@foxmail.com
+```
+i@yanyiwu.com
+```
 
 [CppJieba]:https://github.com/yanyiwu/cppjieba
 [Jieba]:https://github.com/fxsjy/jieba
