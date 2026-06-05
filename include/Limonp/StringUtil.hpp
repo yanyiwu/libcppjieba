@@ -112,12 +112,16 @@ inline string& lower(string& str) {
 }
 
 inline std::string &ltrim(std::string &s) {
-  s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+  s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](char ch) {
+    return !std::isspace(static_cast<unsigned char>(ch));
+  }));
   return s;
 }
 
 inline std::string &rtrim(std::string &s) {
-  s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+  s.erase(std::find_if(s.rbegin(), s.rend(), [](char ch) {
+    return !std::isspace(static_cast<unsigned char>(ch));
+  }).base(), s.end());
   return s;
 }
 
@@ -126,12 +130,16 @@ inline std::string &trim(std::string &s) {
 }
 
 inline std::string & ltrim(std::string & s, char x) {
-  s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::bind2nd(std::equal_to<char>(), x))));
+  s.erase(s.begin(), std::find_if(s.begin(), s.end(), [x](char ch) {
+    return ch != x;
+  }));
   return s;
 }
 
 inline std::string & rtrim(std::string & s, char x) {
-  s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::bind2nd(std::equal_to<char>(), x))).base(), s.end());
+  s.erase(std::find_if(s.rbegin(), s.rend(), [x](char ch) {
+    return ch != x;
+  }).base(), s.end());
   return s;
 }
 

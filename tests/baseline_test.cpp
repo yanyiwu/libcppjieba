@@ -15,6 +15,7 @@ using CppJieba::METHOD_MIX;
 using CppJieba::METHOD_MP;
 using CppJieba::METHOD_QUERY;
 using Limonp::LocalVector;
+using Limonp::trim;
 using std::cerr;
 using std::endl;
 using std::pair;
@@ -146,6 +147,23 @@ bool testLocalVectorPointerRange() {
   return true;
 }
 
+bool testStringTrim() {
+  string spaces = " \ttrim me\n";
+  string hashes = "###trim me###";
+
+  if (trim(spaces) != "trim me") {
+    cerr << "whitespace trim mismatch" << endl;
+    return false;
+  }
+
+  if (trim(hashes, '#') != "trim me") {
+    cerr << "character trim mismatch" << endl;
+    return false;
+  }
+
+  return true;
+}
+
 }  // namespace
 
 int main() {
@@ -160,6 +178,7 @@ int main() {
   ok = testTagging(app) && ok;
   ok = testKeywordExtraction(app) && ok;
   ok = testLocalVectorPointerRange() && ok;
+  ok = testStringTrim() && ok;
 
   if (!ok) {
     return EXIT_FAILURE;
