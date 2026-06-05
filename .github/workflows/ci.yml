@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / ${{ matrix.compiler }} / ${{ matrix.standard }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            compiler: g++
+            standard: c++11
+          - os: ubuntu-latest
+            compiler: g++
+            standard: c++17
+          - os: ubuntu-latest
+            compiler: g++
+            standard: c++20
+          - os: macos-latest
+            compiler: clang++
+            standard: c++11
+          - os: macos-latest
+            compiler: clang++
+            standard: c++17
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build demo
+        run: make CXX=${{ matrix.compiler }} CXXSTD=-std=${{ matrix.standard }}
+
+      - name: Run baseline tests
+        run: make test CXX=${{ matrix.compiler }} CXXSTD=-std=${{ matrix.standard }}
+
+      - name: Run demo
+        run: ./demo
