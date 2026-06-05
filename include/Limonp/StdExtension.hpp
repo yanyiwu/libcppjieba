@@ -3,10 +3,7 @@
 
 #include <map>
 
-#ifdef __APPLE__
-#include <unordered_map>
-#include <unordered_set>
-#elif(__cplusplus == 201103L)
+#if defined(__APPLE__) || __cplusplus >= 201103L
 #include <unordered_map>
 #include <unordered_set>
 #else
