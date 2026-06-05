@@ -14,6 +14,7 @@ class LocalVector : public vector<T> {
   LocalVector(typename vector<T>::const_iterator begin,
               typename vector<T>::const_iterator end)
       : vector<T>(begin, end) {}
+  LocalVector(const T* begin, const T* end) : vector<T>(begin, end) {}
   LocalVector(size_t size, const T& t) : vector<T>(size, t) {}
 };
 
